@@ -31,7 +31,7 @@ class TestsPost:
         new = Candidate().post_without_headers('Marian Shun', 'QA Intern')
         assert new.status_code == 400
     def test_candidate_code_post_with_bad_url(self):
-        new = Candidate().post_with_bad_url('Marian Shun', 'QA Intern')
+        new = Candidate().post_with_bad_url('http://qainterview.cogniance.com/candidatez')
         assert new.status_code == 405
         
 class TestsDelete:
