@@ -2,7 +2,8 @@ import requests
 import json
 
 url = 'http://qainterview.cogniance.com/candidates'
-
+name = 'Marian Shun'
+position = 'QA Intern'
 
 class ListCandidate:
     def get(self):
@@ -29,7 +30,7 @@ class Candidate:
                                      
                                      data=json.dumps(data) )
         return res_new_cand
-    def post_with_bad_url(self, name, position):
+    def post_with_bad_url(self, badurl):
         data={'name': name, 
                'position': position}
         res_new_cand = requests.post(badurl, 
