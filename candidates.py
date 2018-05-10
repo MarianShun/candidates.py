@@ -21,6 +21,22 @@ class Candidate:
                                      
                                      data=json.dumps(data) )
         return res_new_cand
+    def post_without_headers(self, name, position):
+        data={'name': name, 
+               'position': position}
+        res_new_cand = requests.post(url, 
+                                     
+                                     
+                                     data=json.dumps(data) )
+        return res_new_cand
+    def post_with_bad_url(self, name, position):
+        data={'name': name, 
+               'position': position}
+        res_new_cand = requests.post(badurl, 
+                                     headers={'content-type': 'application/json'},
+                                     
+                                     data=json.dumps(data) )
+        return res_new_cand
     def delete(self, delid):
         del_cands = requests.delete(url+r'/'+str(delid))
         return del_cands
